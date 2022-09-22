@@ -9,8 +9,8 @@ PNS Application
 Expects Node.js version >=14.17.0
 
 ```shell
-$> git clone https://github.com/Ava-Name-Services/ans-app.git
-$> cd ans-app
+$> git clone https://github.com/pulsedomains/pns-app.git
+$> cd pns-app
 $> yarn install
 $> yarn start
 ```
