@@ -18,8 +18,10 @@ const cache = new InMemoryCache({
 })
 
 const endpoints = {
-  '941': 'http://127.0.0.1:8000/subgraphs/name/graphprotocol/ens',
-  '369': 'http://127.0.0.1:8000/subgraphs/name/graphprotocol/ens'
+  '941':
+    'https://2590-59-91-109-226.in.ngrok.io/subgraphs/name/graphprotocol/ens',
+  '369':
+    'https://2590-59-91-109-226.in.ngrok.io/subgraphs/name/graphprotocol/ens'
 }
 
 function getGraphQLAPI() {
