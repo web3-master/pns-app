@@ -238,10 +238,10 @@ async function getContract() {
   try {
     const ens = getENS()
     //contractAddress = await ens.getAddress('eth-usd.data.eth')
-    contractAddress = '0xfAf3B2845bfB666cbfAaAB6DC077a3d19439678d'
+    contractAddress = '0xff286f6F60b679ccDD2E3Fe80Bb197A3f3E4fB67'
   } catch {
     //return mainnet if it does not exist
-    contractAddress = '0x5f4eC3Df9cbd43714FE2740f5E3616155c5b8419'
+    contractAddress = '0xff286f6F60b679ccDD2E3Fe80Bb197A3f3E4fB67'
   }
   return contractAddress
 }
