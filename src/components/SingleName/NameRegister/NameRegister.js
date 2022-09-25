@@ -251,6 +251,7 @@ const NameRegister = ({
       setInvalid(true)
     }
   }
+  debugger
   return (
     <NameRegisterContainer>
       {step === 'PRICE_DECISION' && (
