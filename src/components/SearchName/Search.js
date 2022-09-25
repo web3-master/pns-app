@@ -10,17 +10,6 @@ import { withRouter } from 'react-router'
 import searchIcon from '../../assets/search.svg'
 import mq from 'mediaQuery'
 import LanguageSwitcher from '../LanguageSwitcher'
-import { setupENS, setupWeb3 } from '@pnsdomains/ui'
-
-window.addEventListener('load', async () => {
-  debugger
-  // const provider = new Web3(`https://rpc.v2b.testnet.pulsechain.com`)
-
-  // let { web3 } = await setupWeb3(provider)
-  // console.log('***************',web3);
-  const { ens, registrar } = await setupENS()
-  console.log('===========>>>>>>>>>>', ens, registrar)
-})
 
 const SearchForm = styled('form')`
   display: flex;
