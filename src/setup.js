@@ -1,6 +1,6 @@
 import { getAccounts, getNetwork, getNetworkId } from '@pnsdomains/ui'
 
-import { isReadOnly } from '@pnsdomains/ui/src/web3'
+import { isReadOnly } from '@pnsdomains/ui/dist/web3'
 
 import { setup } from './apollo/mutations/ens'
 import { connect } from './api/web3modal'

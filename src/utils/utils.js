@@ -1,4 +1,4 @@
-import { getNetworkId } from '@pnsdomains/ui/src/web3'
+import { getNetworkId } from '@pnsdomains/ui/dist/web3'
 import {
   emptyAddress as _emptyAddress,
   validateName as _validateName,
@@ -6,7 +6,7 @@ import {
   getEnsStartBlock as _ensStartBlock,
   isLabelValid as _isLabelValid,
   isEncodedLabelhash
-} from '@pnsdomains/ui/src/utils/index'
+} from '@pnsdomains/ui/dist/utils/index'
 import { validate } from '@ensdomains/ens-validation'
 import { normalize } from '@ensdomains/eth-ens-namehash'
 import { CID } from 'multiformats/esm/src/cid'
