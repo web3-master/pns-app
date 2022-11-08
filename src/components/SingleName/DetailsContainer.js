@@ -199,6 +199,7 @@ function DetailsContainer({
   isParentMigratedToNewRegistry,
   loadingIsParentMigrated
 }) {
+  console.log('DetailsContainer.js:', domain)
   const { t } = useTranslation()
   const isExpired = domain.expiryTime < new Date()
   const domainOwner =

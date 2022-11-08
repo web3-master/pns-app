@@ -60,16 +60,6 @@ export const getProvider = async reconnect => {
         ensAddress: process.env.REACT_APP_ENS_ADDRESS
       })
       provider = providerObject
-      // let labels = window.localStorage['labels']
-      //   ? JSON.parse(window.localStorage['labels'])
-      //   : {}
-      // window.localStorage.setItem(
-      //   'labels',
-      //   JSON.stringify({
-      //     ...labels,
-      //     ...JSON.parse(process.env.REACT_APP_LABELS)
-      //   })
-      // )
       return provider
     }
 
@@ -88,7 +78,8 @@ export const getProvider = async reconnect => {
     const { providerObject } = await setup({
       reloadOnAccountsChange: false,
       enforceReadOnly: true,
-      enforceReload: false
+      enforceReload: false,
+      ensAddress: process.env.REACT_APP_ENS_ADDRESS
     })
     provider = providerObject
     return provider
@@ -99,24 +90,27 @@ export const getProvider = async reconnect => {
     }
   }
 
-  try {
-    // const { providerObject } = await setup({
-    //   reloadOnAccountsChange: false,
-    //   enforceReadOnly: true,
-    //   enforceReload: false
-    // })
-    // provider = providerObject
-    // return provider
-    let provider
-    const { providerObject } = await setup({
-      reloadOnAccountsChange: false,
-      customProvider: 'http://localhost:8545',
-      ensAddress: process.env.REACT_APP_ENS_ADDRESS
-    })
-    return provider
-  } catch (e) {
-    console.error('getProvider readOnly error: ', e)
-  }
+  globalErrorReactive('Provider not found!')
+  return
+  // try {
+  // const { providerObject } = await setup({
+  //   reloadOnAccountsChange: false,
+  //   enforceReadOnly: true,
+  //   enforceReload: false,
+  //   ensAddress: process.env.REACT_APP_ENS_ADDRESS
+  // })
+  // provider = providerObject
+  // return provider
+  // let provider
+  // const { providerObject } = await setup({
+  //   reloadOnAccountsChange: false,
+  //   customProvider: 'http://localhost:8545',
+  //   ensAddress: process.env.REACT_APP_ENS_ADDRESS
+  // })
+  // return provider
+  // } catch (e) {
+  //   console.error('getProvider readOnly error: ', e)
+  // }
 }
 
 export const setWeb3Provider = async provider => {

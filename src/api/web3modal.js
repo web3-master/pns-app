@@ -17,7 +17,7 @@ const PORTIS_ID = '57e5d6ca-e408-4925-99c4-e7da3bdb8bf5'
 let provider
 const option = {
   network: 'mainnet', // optional
-  cacheProvider: true, // optional
+  cacheProvider: false, // optional
   providerOptions: {
     walletconnect: {
       package: () => import('@walletconnect/web3-provider'),
@@ -67,7 +67,8 @@ export const connect = async () => {
     await setupENS({
       customProvider: provider,
       reloadOnAccountsChange: false,
-      enforceReload: true
+      enforceReload: true,
+      ensAddress: process.env.REACT_APP_ENS_ADDRESS
     })
     return provider
   } catch (e) {
