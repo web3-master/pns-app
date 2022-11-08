@@ -89,7 +89,7 @@ function Name({ details: domain, name, pathname, type, refetch }) {
   const isRegistrant = !domain.available && domain.registrant === account
 
   const registrationOpen = isRegistrationOpen(
-    domain.available,
+    domain.available ? domain.available : true,
     domain.parent,
     isDeedOwner
   )

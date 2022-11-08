@@ -50,7 +50,6 @@ const DomainInfoContainer = ({ searchTerm }) => {
     return null
   }
   const { singleName } = data
-
   return <DomainItemContainer {...{ singleName, searchTerm }} />
 }
 

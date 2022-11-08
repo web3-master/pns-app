@@ -1,5 +1,5 @@
 import jsSHA3 from 'js-sha3'
-import { isEncodedLabelhash, decodeLabelhash } from '@pnsdomains/ui'
+import { isEncodedLabelhash, decodeLabelhash } from 'pnsdomains-ui-fixed'
 
 function getLabels() {
   return JSON.parse(localStorage.getItem('labels')) || {}

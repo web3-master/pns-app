@@ -1,7 +1,7 @@
 import { setup as setupENS } from '../apollo/mutations/ens'
 import SafeAppSDK from '@gnosis.pm/safe-apps-sdk'
 import { SafeAppProvider } from '@gnosis.pm/safe-apps-provider'
-import { getNetwork } from '@pnsdomains/ui'
+import { getNetwork } from 'pnsdomains-ui-fixed'
 
 const safeAppsSdk = new SafeAppSDK()
 let isSafeAppSetup = false

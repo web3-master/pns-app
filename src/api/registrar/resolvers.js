@@ -6,7 +6,6 @@ import modeNames from '../modes'
 import { sendHelper } from '../resolverUtils'
 
 const defaults = {}
-debugger
 const resolvers = {
   Query: {
     async getRentPrice(_, { label, duration }) {

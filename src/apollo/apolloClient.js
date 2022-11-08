@@ -18,10 +18,8 @@ const cache = new InMemoryCache({
 })
 
 const endpoints = {
-  '941':
-    'https://fb21-117-211-4-34.in.ngrok.io/subgraphs/name/graphprotocol/ens',
-  '369':
-    'https://fb21-117-211-4-34.in.ngrok.io/subgraphs/name/graphprotocol/ens'
+  '941': 'http://127.0.0.1:8000/subgraphs/name/graphprotocol/ens',
+  '369': 'http://127.0.0.1:8000/subgraphs/name/graphprotocol/ens'
 }
 
 function getGraphQLAPI() {
@@ -79,6 +77,9 @@ export function setupClient() {
 
   const splitLink = split(
     ({ operationName }) => {
+      const isWeb3Link =
+        resolvers.Query[operationName] || resolvers.Mutation[operationName]
+      console.log('apolloClient called: ', operationName, isWeb3Link != null)
       return resolvers.Query[operationName] || resolvers.Mutation[operationName]
     },
     web3Link,

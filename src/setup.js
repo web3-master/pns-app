@@ -1,6 +1,6 @@
-import { getAccounts, getNetwork, getNetworkId } from '@pnsdomains/ui'
+import { getAccounts, getNetwork, getNetworkId } from 'pnsdomains-ui-fixed'
 
-import { isReadOnly } from '@pnsdomains/ui/dist/web3'
+import { isReadOnly } from 'pnsdomains-ui-fixed/dist/web3'
 
 import { setup } from './apollo/mutations/ens'
 import { connect } from './api/web3modal'
@@ -33,7 +33,10 @@ export const setSubDomainFavourites = () => {
 }
 
 export const isSupportedNetwork = networkId => {
+  console.log('networkId', networkId)
   switch (networkId) {
+    case 1337:
+      return true
     case 941:
       return true
     case 369:
@@ -46,6 +49,7 @@ export const isSupportedNetwork = networkId => {
 export const getProvider = async reconnect => {
   try {
     let provider
+
     if (
       process.env.REACT_APP_STAGE === 'local' &&
       process.env.REACT_APP_ENS_ADDRESS
@@ -56,16 +60,16 @@ export const getProvider = async reconnect => {
         ensAddress: process.env.REACT_APP_ENS_ADDRESS
       })
       provider = providerObject
-      let labels = window.localStorage['labels']
-        ? JSON.parse(window.localStorage['labels'])
-        : {}
-      window.localStorage.setItem(
-        'labels',
-        JSON.stringify({
-          ...labels,
-          ...JSON.parse(process.env.REACT_APP_LABELS)
-        })
-      )
+      // let labels = window.localStorage['labels']
+      //   ? JSON.parse(window.localStorage['labels'])
+      //   : {}
+      // window.localStorage.setItem(
+      //   'labels',
+      //   JSON.stringify({
+      //     ...labels,
+      //     ...JSON.parse(process.env.REACT_APP_LABELS)
+      //   })
+      // )
       return provider
     }
 
@@ -74,7 +78,6 @@ export const getProvider = async reconnect => {
       const provider = await setupSafeApp(safe)
       return provider
     }
-
     if (
       window.localStorage.getItem('WEB3_CONNECT_CACHED_PROVIDER') ||
       reconnect
@@ -82,7 +85,6 @@ export const getProvider = async reconnect => {
       provider = await connect()
       return provider
     }
-
     const { providerObject } = await setup({
       reloadOnAccountsChange: false,
       enforceReadOnly: true,
@@ -98,12 +100,19 @@ export const getProvider = async reconnect => {
   }
 
   try {
+    // const { providerObject } = await setup({
+    //   reloadOnAccountsChange: false,
+    //   enforceReadOnly: true,
+    //   enforceReload: false
+    // })
+    // provider = providerObject
+    // return provider
+    let provider
     const { providerObject } = await setup({
       reloadOnAccountsChange: false,
-      enforceReadOnly: true,
-      enforceReload: false
+      customProvider: 'http://localhost:8545',
+      ensAddress: process.env.REACT_APP_ENS_ADDRESS
     })
-    provider = providerObject
     return provider
   } catch (e) {
     console.error('getProvider readOnly error: ', e)

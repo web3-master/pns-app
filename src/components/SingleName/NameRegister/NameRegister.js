@@ -148,7 +148,7 @@ const NameRegister = ({
       if (secondsPassed < waitTime) {
         setSecondsPassed(s => s + 1)
       } else {
-        if (waitBlockTimestamp && timerRunning) {
+        if (/*waitBlockTimestamp && */ timerRunning) {
           incrementStep()
           sendNotification(
             `${domain.name} ${t('register.notifications.ready')}`
@@ -251,7 +251,6 @@ const NameRegister = ({
       setInvalid(true)
     }
   }
-  debugger
   return (
     <NameRegisterContainer>
       {step === 'PRICE_DECISION' && (
@@ -338,7 +337,7 @@ const NameRegisterDataWrapper = props => {
     console.log(error)
   }
   const { getMinimumCommitmentAge } = data
-  return <NameRegister waitTime={getMinimumCommitmentAge} {...props} />
+  return <NameRegister waitTime={/*getMinimumCommitmentAge*/ 10} {...props} />
 }
 
 export default NameRegisterDataWrapper

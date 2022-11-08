@@ -1,4 +1,4 @@
-import { getNetworkId } from '@pnsdomains/ui/dist/web3'
+import { getNetworkId } from 'pnsdomains-ui-fixed/dist/web3'
 import {
   emptyAddress as _emptyAddress,
   validateName as _validateName,
@@ -6,7 +6,7 @@ import {
   getEnsStartBlock as _ensStartBlock,
   isLabelValid as _isLabelValid,
   isEncodedLabelhash
-} from '@pnsdomains/ui/dist/utils/index'
+} from 'pnsdomains-ui-fixed/dist/utils/index'
 import { validate } from '@ensdomains/ens-validation'
 import { normalize } from '@ensdomains/eth-ens-namehash'
 import { CID } from 'multiformats/esm/src/cid'
@@ -123,7 +123,7 @@ export const parseSearchTerm = async term => {
   } catch (e) {
     return 'invalid'
   }
-  console.log('** parseSearchTerm', { ens })
+
   const address = await ens.getOwner(tld)
   return _parseSearchTerm(term, true)
 }

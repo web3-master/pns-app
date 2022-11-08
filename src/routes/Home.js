@@ -304,14 +304,12 @@ export default ({ match }) => {
   const {
     data: { accounts }
   } = useQuery(GET_ACCOUNT)
-  debugger
   const {
     data: { network, displayName, isReadOnly, isSafeApp }
   } = useQuery(HOME_DATA, {
     variables: { address: accounts?.[0] }
   })
   console.log('=======>', network, displayName, isReadOnly, isSafeApp)
-  debugger
   return (
     <Hero>
       <HeroTop>

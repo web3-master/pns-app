@@ -1,5 +1,5 @@
 import subDomainRegistrarContract from './contracts/subDomainRegistrarContract.json'
-import { getProvider } from '@pnsdomains/ui'
+import { getProvider } from 'pnsdomains-ui-fixed'
 import { Contract, utils } from 'ethers'
 import domains from '../constants/domains.json'
 

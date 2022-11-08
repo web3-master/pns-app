@@ -5,7 +5,7 @@ import {
   networkReactive,
   web3ProviderReactive
 } from '../apollo/reactiveVars'
-import { getNetwork, getNetworkId, isReadOnly } from '@pnsdomains/ui'
+import { getNetwork, getNetworkId, isReadOnly } from 'pnsdomains-ui-fixed'
 
 const INFURA_ID =
   window.location.host === 'app.pulse.domains'

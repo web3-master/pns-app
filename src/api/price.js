@@ -1,4 +1,8 @@
-import { ethers, getNetworkId, getNetworkProviderUrl } from '@pnsdomains/ui'
+import {
+  ethers,
+  getNetworkId,
+  getNetworkProviderUrl
+} from 'pnsdomains-ui-fixed'
 import getENS, { getRegistrar } from 'apollo/mutations/ens'
 
 const ChainLinkABI = `[

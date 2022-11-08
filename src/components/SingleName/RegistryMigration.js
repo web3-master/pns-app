@@ -100,7 +100,7 @@ export default function RegistryMigration({
           : dnssecmode
           ? dnssecMigrateMessage
           : defaultMessage}
-        {domain.parent !== 'eth' && !dnssecmode && (
+        {domain.parent !== 'pls' && !dnssecmode && (
           <SubWarning>{t('registrymigration.donotaccept')}</SubWarning>
         )}
       </WarningContent>

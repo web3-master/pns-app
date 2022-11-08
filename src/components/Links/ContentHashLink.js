@@ -1,7 +1,7 @@
 import React from 'react'
 import styled from '@emotion/styled/macro'
 import { ReactComponent as ExternalLinkIcon } from '../Icons/externalLink.svg'
-import { getProtocolType } from '@pnsdomains/ui'
+import { getProtocolType } from 'pnsdomains-ui-fixed'
 
 const ContentHashLinkContainer = styled('a')`
   display: inline-block;

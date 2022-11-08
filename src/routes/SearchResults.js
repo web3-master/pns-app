@@ -36,6 +36,7 @@ const useCheckValidity = (_searchTerm, isENSReady) => {
       }
 
       const type = await parseSearchTerm(searchTerm)
+
       if (!['unsupported', 'invalid', 'short'].includes(type)) {
         _parsed = validateName(searchTerm)
         setParsed(_parsed)

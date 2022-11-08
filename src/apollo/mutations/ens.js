@@ -1,4 +1,4 @@
-import { setupENS } from '@pnsdomains/ui'
+import { setupENS } from 'pnsdomains-ui-fixed'
 import { isENSReadyReactive } from '../reactiveVars'
 
 const INFURA_ID =

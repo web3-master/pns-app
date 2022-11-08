@@ -9,7 +9,7 @@ import {
   subDomainFavouritesReactive,
   web3ProviderReactive
 } from '../reactiveVars'
-import { getAccounts, getNetwork, getNetworkId } from '@pnsdomains/ui'
+import { getAccounts, getNetwork, getNetworkId } from 'pnsdomains-ui-fixed'
 import { disconnect, connect } from '../../api/web3modal'
 import { getReverseRecord } from '../sideEffects'
 import { isRunningAsSafeApp } from 'utils/safeApps'

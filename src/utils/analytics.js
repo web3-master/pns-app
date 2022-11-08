@@ -1,5 +1,5 @@
 import ReactGA from 'react-ga'
-import { getNetworkId } from '@pnsdomains/ui'
+import { getNetworkId } from 'pnsdomains-ui-fixed'
 
 const TrackingID = {
   live: 'UA-138903307-1',
